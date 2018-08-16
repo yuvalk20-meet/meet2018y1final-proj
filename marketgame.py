@@ -9,8 +9,19 @@ turtle.setup(SIXE,SIZE) # setting up the borders to be 1000x1000
 turtle.pensize(10)
 ishouse = True
  
+#CREATING THE SELLER
+turtle.register_shape("Seller(1).gif")
+seller = turtle.clone()
+seller.shape("Seller(1).gif")
+
+seller.up()
+seller.goto(-225, 0)
+
+seller.speed(1)
+ 
 def make_house():
     turtle.clear()
+    seller.hideturtle()
     turtle.up()
     print("REEEEE")
     turtle.goto(-400,-270)
@@ -40,16 +51,23 @@ turtle.register_shape("left.gif")
 player = turtle.clone()
 player.shape("player1.gif")
 
+
+
 turtle.hideturtle()
 player.up()
 
+                               #O
+                            #O  O
 #MAKING IT MO     OVE
                             #O  O
                                #O
+
 UP_ARROW = "Up"
 LEFT_ARROW = "Left"
 DOWN_ARROW = "Down"
 RIGHT_ARROW = "Right"
+if not ishouse:
+    counter = 300
 time_step = 5
 
 UP = 0
@@ -136,6 +154,7 @@ def player_move():
 
 def make_market():
     turtle.clear()
+    seller.showturtle()
     turtle.penup()
     turtle.goto(-400,-270)
     turtle.pendown()
@@ -149,6 +168,10 @@ def make_market():
     turtle.goto(-200,75)
     turtle.goto(-200,-75)
     turtle.goto(-250,-75)
+    for x in range(10):
+        seller.goto(-225, 20)
+        seller.goto(-225, -20)
+    seller.goto(-225, 0)
 
 
 
